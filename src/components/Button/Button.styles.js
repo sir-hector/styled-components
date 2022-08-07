@@ -7,3 +7,8 @@ export const StyledButton = styled.button`
     cursor: pointer;
     background-color: ${(props) => props.variant === 'outline' ? '#FFF' : '#4caf50'};
 `
+
+export const FuncyButton = styled(StyledButton)`
+    background-image: linear-gradient(to right, #f6d365 0%, #fda085 100%);
+    border: none;
+`
