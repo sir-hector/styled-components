@@ -1,5 +1,5 @@
 import "./App.css";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
 import logo from "./logo.svg";
 import StyledButton, {
   FuncyButton,
@@ -19,9 +19,16 @@ const theme = {
   }
 }
 
+const GlobalStyle = createGlobalStyle`
+  button {
+    font-family: 'Roboto'
+  }
+`
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <div className="App">
         <AnimatedLogo src={logo}></AnimatedLogo>
         <StyledButton variant="outline" type="submit">
