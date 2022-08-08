@@ -1,10 +1,14 @@
 import './App.css';
-import StyledButton, {FuncyButton} from './components/Button/Button';
+import StyledButton, {FuncyButton, SubmitButton} from './components/Button/Button';
 
 function App() {
   return (
     <div className="App">
-      <StyledButton variant='outline'>Button</StyledButton>
+      <StyledButton variant='outline' type='submit'>Button</StyledButton>
+      <div>
+        <br></br>
+      </div>
+      <SubmitButton variant='outline' type='submit'>Button</SubmitButton>
       <div>
         <br></br>
       </div>
