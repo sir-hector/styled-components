@@ -6,9 +6,14 @@ export const StyledButton = styled.button`
     padding: 15px 15px;
     cursor: pointer;
     background-color: ${(props) => props.variant === 'outline' ? '#FFF' : '#4caf50'};
+    &:hover {
+        background-color: ${(props) => props.variant !== 'outline' ? '#FFF' : '#4caf50'};
+        color: ${(props) => props.variant !== 'outline' ? '#4caf50' : '#FFF'};
+    }
 `
 
 export const FuncyButton = styled(StyledButton)`
     background-image: linear-gradient(to right, #f6d365 0%, #fda085 100%);
     border: none;
 `
+
