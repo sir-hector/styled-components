@@ -1,25 +1,50 @@
-import './App.css';
-import logo from './logo.svg'
-import StyledButton, {FuncyButton, SubmitButton, AnimatedLogo} from './components/Button/Button';
+import "./App.css";
+import { ThemeProvider } from "styled-components";
+import logo from "./logo.svg";
+import StyledButton, {
+  FuncyButton,
+  SubmitButton,
+  AnimatedLogo,
+  DarkButton
+} from "./components/Button/Button";
+
+const theme = {
+  dark: {
+    primary: '#000',
+    text: '#fff'
+  },
+  light: {
+    text: '#000',
+    primary: '#fff'
+  }
+}
 
 function App() {
   return (
-    <div className="App">
-      <AnimatedLogo src={logo}></AnimatedLogo>
-      <StyledButton variant='outline' type='submit'>Button</StyledButton>
-      <div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <AnimatedLogo src={logo}></AnimatedLogo>
+        <StyledButton variant="outline" type="submit">
+          Button
+        </StyledButton>
+        <div>
+          <br></br>
+        </div>
+        <SubmitButton variant="outline" type="submit">
+          Button
+        </SubmitButton>
+        <div>
+          <br></br>
+        </div>
+        <StyledButton>Button</StyledButton>
+        <div>
+          <br></br>
+        </div>
+        <FuncyButton as="a">Fancy Button</FuncyButton>
         <br></br>
+        <DarkButton>Dark </DarkButton>
       </div>
-      <SubmitButton variant='outline' type='submit'>Button</SubmitButton>
-      <div>
-        <br></br>
-      </div>
-      <StyledButton>Button</StyledButton>
-      <div>
-        <br></br>
-      </div>
-      <FuncyButton as = 'a'>Fancy Button</FuncyButton>
-    </div>
+    </ThemeProvider>
   );
 }
 
